@@ -1,0 +1,21 @@
+product_id,name,brand,category,warranty_years
+1,HP_Laptop,HP,Electronics,2
+2,Dell_Laptop,Dell,Electronics,2
+3,iPhone_14,Apple,Electronics,1
+4,Galaxy_S23,Samsung,Electronics,1
+5,Sony_Headphones,Sony,Accessories,1
+6,Logitech_Mouse,Logitech,Accessories,1
+7,Kindle_Paperwhite,Amazon,Electronics,1
+8,Asus_Monitor,Asus,Electronics,3
+9,Canon_Camera,Canon,Electronics,2
+10,Nike_Shoes,Nike,Fashion,0
+11,Adidas_Shoes,Adidas,Fashion,0
+12,Levi_Jeans,Levi's,Fashion,0
+13,Woodland_Jacket,Woodland,Fashion,0
+14,Harry_Potter_Book,Bloomsbury,Books,0
+15,Data_Structures_Book,Pearson,Books,0
+16,Samsung_TV,Samsung,Electronics,2
+17,Apple_Watch,Apple,Electronics,1
+18,Dyson_Vacuum,Dyson,Home,2
+19,Philips_Trimmer,Philips,Personal Care,1
+20,Bajaj_Mixer,Bajaj,Home,1
