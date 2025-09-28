@@ -128,7 +128,60 @@ void Cart::showCartSummary() {
     }
 
     double subtotal = 0.0;
-    
+    cout << "\n--- Cart Summary for " << username << " ---" << endl;
+    cout << left << setw(12) << "Listing ID" << setw(25) << "Product Name"
+         << setw(18) << "Seller" << setw(12) << "Price"
+         << setw(10) << "Quantity" << setw(12) << "Total" << endl;
+    cout << string(89, '-') << endl;
+
+    for (const auto& item : items) {
+        double total = item.product.price * item.quantity;
+        subtotal += total;
+        cout << left << setw(12) << item.product.Idlisting
+             << setw(25) << item.product.Nameofproduct
+             << setw(18) << item.product.Nameofseller
+             << "$" << fixed << setprecision(2) << setw(11) << item.product.price
+             << setw(10) << item.quantity
+             << "$" << fixed << setprecision(2) << setw(11) << total << endl;
+    }
+    cout << string(89, '-') << endl;
+    cout << right << setw(77) << "Subtotal: $" << fixed << setprecision(2) << subtotal << endl;
+    cout << "--- End of Summary ---\n" << endl;
 }
 
+void Cart::updateQuantityinCart(int Idlisting, int newQuantity) {
+    if (newQuantity <= 0) {
+        cout << "Quantity must be positive. To remove an item, use the delete option." << endl;
+        return;
+    }
 
+    for (auto& item : items) {
+        if (item.product.Idlisting == Idlisting) {
+            if (newQuantity > item.product.Stockavailable) {
+                cout << "Error: Not enough stock. Only " << item.product.Stockavailable << " available." << endl;
+                return;
+            }
+            item.quantity = newQuantity;
+            cout << "Updated quantity for " << item.product.Nameofproduct << "to" << newQuantity << "." << endl;
+            return;
+        }
+    }
+    cout << "Error: Listing ID " << Idlisting << " not found in your cart." << endl;
+}
+
+void Cart::generateCartfile() {
+    ofstream file(Cartfilename);
+    if (!file.is_open()) {
+        cerr << "Error: Could not save cart file for user " << username << "." << endl;
+        return;
+    }
+
+    file << "listing_ID,quantity" << endl;
+
+    for (const auto& item : items) {
+        file << item.product.Idlisting << "," << item.quantity << endl;
+    }
+
+    file.close();
+    cout << "Cart saved successfully for " << username << "." << endl;
+}
