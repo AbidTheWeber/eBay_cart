@@ -17,6 +17,8 @@ public:
     bool registerID(string &username); //called when signup is needed
     void updatePassword(const string &pass); //same function will be called to set new password & update old password
     bool checkPassword(const string &password); //once user id is matched , password is checked 
+    string getName();
+    string getAddress();
 
 };
 
