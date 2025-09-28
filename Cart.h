@@ -39,6 +39,8 @@ public:
 
     void addProductTocart (int Idlisting, int quantity);
 
+    void deleteProductfromCart (int Idlisting);
+    
     
 };
 
