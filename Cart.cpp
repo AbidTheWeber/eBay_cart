@@ -17,13 +17,24 @@ Cart::Cart(const string& currentUsername) {
 }
 
 void Cart::loadSourceProductList(const string& Productfile, const string& Filelisting) {
-    map <int, string> Nameofproduct;
+    map <int, string> Nameofproducts;
     ifstream Filep(Productfile);
     if (Filep.is_open()) {
         string line;
         getline(Filep, line);
         while (getline(Filep, line)) {
-            
+            stringstream ss(line);
+            string field;
+            int Idproduct;
+            string Nameofproduct;
+            getline(ss, field, ',');
+            Idproduct = stoi(field);
+            getline(ss, Nameofproduct, ',');
+            Nameofproducts[Idproduct] = Nameofproduct;
         }
     }
+    Filep.close();
+
+    ifstream FileL(Filelisting);
+    
 };
