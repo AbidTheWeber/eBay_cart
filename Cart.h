@@ -41,7 +41,13 @@ public:
 
     void deleteProductfromCart (int Idlisting);
     
-    
+    void clearCart();
+
+    void showCartSummary();
+
+    void updateQuantityinCart(int Idlisting, int newQuantity);
+
+    void generateCartfile();
 };
 
 
