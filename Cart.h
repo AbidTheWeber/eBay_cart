@@ -30,7 +30,7 @@ private:
     vector<Itemcart> items;
     vector<DetailsofProduct> sourceProductList;
 
-    void loadSourceProductList(const string& Productflie, const string& Filelisting);
+    void loadSourceProductList(const string& Productfile, const string& Filelisting);
 
     void loadCartfromFile();
 
