@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 
-    User person1;
+    User person1; // will be replaced from here to user_interface
     string id , username , password;
     bool success = false;
     cout<<"Welcome to eBay"<<endl;

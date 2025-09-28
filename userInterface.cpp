@@ -1,6 +1,12 @@
 #include<iostream>
 #include<iomanip>
 #include"user.h"
+#include"product.h"
+#include"search.h"
+#include"Cart.h"
+#include"Checkout.h"
+#include"Authntication.h"
+
 using namespace std;
 
 void showMenu();
@@ -8,7 +14,10 @@ void showMenu();
 int main()
 {
 
-    cout<<"After login user can see the below menu:"<<endl;
+    User active1;
+
+
+    cout<<"***Welcome to eBay!***"<<endl<<endl;
 
     int user_choice;
     //menu that is shown to user !
