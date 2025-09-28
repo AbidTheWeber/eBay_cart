@@ -11,13 +11,16 @@ using namespace std;
 
 void showMenu();
 
+
 int main()
 {
-
     User active1;
+    Authentication session1;
 
-
+    session1.getUser(&active1);
     cout<<"***Welcome to eBay!***"<<endl<<endl;
+
+    session1.login();
 
     int user_choice;
     //menu that is shown to user !
