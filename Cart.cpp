@@ -76,6 +76,11 @@ void Cart::loadCartfromFile() {
         string Idlisting_str, quantity_str;
         getline(ss, Idlisting_str, ',');
         getline(ss, quantity_str, ',');
+
+        int Idlisting = stoi(Idlisting_str);
+        int quantity = stoi(quantity_str);
+
+        addProductTocart(Idlisting, quantity);
     }
     file.close();
 }
