@@ -1,25 +1,24 @@
+#ifndef USER_H
+#define USER_H
+
 #include <string>
+#include <set>
+
 using namespace std;
-#ifndef USER_HPP
-#define USER_HPP
 
-
-class User{
-
+class User
+{
 private:
     string email;
     string password;
     string address;
-    const string filepath ="";
+    const string filepath = "";
+    set<string> registeredIds;
+
 public:
-    bool checkid(const string id) ;
-    bool registerID(string username);
-    void updatePassword(const string pass); 
-
-
-
-
-
+    bool checkid(const string &id);
+    bool registerID(string &username);
+    void updatePassword(const string pass);
 };
 
 #endif
