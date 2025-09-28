@@ -49,7 +49,7 @@ void Cart::loadSourceProductList(const string& Productfile, const string& Fileli
 
         getline(ss, field, ','); p.Idlisting = stoi(field);
         getline(ss, field, ','); p.Idproduct = stoi(field);
-        getline(ss, field, ','); p.Nameofseller = stoi(field);
+        getline(ss, field, ','); p.Nameofseller = field;
         getline(ss, field, ','); p.price = stoi(field);
         getline(ss, field, ','); p.Stockavailable = stoi(field);
 
