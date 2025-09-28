@@ -4,12 +4,12 @@
 using namespace std;
 
 
-bool User::checkid(const string id) 
+bool User::checkid(const string &id) 
 {
 
 }
 
-bool User::registerID(string username)
+bool User::registerID(string &username)
 {
 
 }
