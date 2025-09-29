@@ -11,7 +11,7 @@ Cart::Cart(const string& currentUsername) {
     username = currentUsername;
     Cartfilename = "cart_" + username + ".csv";
 
-    loadSourceProductList("product.csv", "listing.csv");
+    loadSourceProductList("products.csv", "listings.csv");
 
     loadCartfromFile();
 }
