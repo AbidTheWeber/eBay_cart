@@ -5,6 +5,7 @@
 
 class product;
 class listing;
+class Cart;
 
 class search
 {

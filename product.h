@@ -6,26 +6,28 @@
 struct productD
 {
     int id;
-    string name;
-    string brand;
-    string category;
+    std::string name;
+    std::string brand;
+    std::string category;
     int warranty_year;
 };
+
+std::string convertToLower(std::string str);
 
 class product
 {
 
 private:
 
-const std::string filepath="products.csv";
-vector<productD> Display;
-int read_record(const string &search_term , int search_indiactor);
+    const std::string filepath="products.csv";
+    std::vector<productD> Display;
+    int read_record(const std::string &search_term , int search_indiactor);
 
 public:
 
-int getIDname(const string &name);
-int getIDbrand(const string &brand);
-int getIDcategory(const string &category);
+int getIDname(const std::string &name);
+int getIDbrand(const std::string &brand);
+int getIDcategory(const std::string &category);
 void printProd(int prod_id);
 
 };

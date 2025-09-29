@@ -16,26 +16,27 @@ int showCartOption();
 
 int main()
 {
-    //Instantation of classes 
     User active1;
     Authentication session1;
+    session1.getUser(&active1);
+
+    cout << "***Welcome to eBay!***" << endl << endl;
+
+    if(session1.login() != 0) {
+        cout << "Login failed. Exiting..." << endl;
+        return 1;
+    }
+
+    // Create cart and other objects AFTER successful login
     product show1;
     search result1;
     listing market1;
-    Cart save_place(active1.getName());
+    Cart save_place(active1.getName());  // Now username will be available
 
-
-    //passing the class to destinations
-    session1.getUser(&active1);
+    // Pass objects to search
     result1.getProduct(&show1);
     result1.getMarket(&market1);
     result1.getCart(&save_place);
-
-
-
-    cout<<"***Welcome to eBay!***"<<endl<<endl;
-
-    session1.login();
 
     int user_choice;
     //menu that is shown to user!
@@ -49,8 +50,8 @@ int main()
         {
         case 1:
             save_place.showCartSummary();
-            cart_option= showCartOption();
         do{
+                cart_option=showCartOption();
                 switch(cart_option) 
                 {
                 case 1:
@@ -92,7 +93,6 @@ int main()
                 default:
                     cout << "Invalid option. Try again.\n";
                 }
-            showCartOption();
         }while(cart_option!=0);
         break;
         case 2:
@@ -144,7 +144,7 @@ void showMenu()
     else
     {
         cout<<"Invalid option!\n";
-        return;
+        return 0;
     }
 }
 

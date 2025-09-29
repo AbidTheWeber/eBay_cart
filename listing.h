@@ -1,12 +1,14 @@
 #ifndef LIST_HPP
 #define LIST_HPP
 #include<string>
+#include<vector>
 
 struct sellerD
 {
     int listing_id	, product_id ;	
-    string seller_name	;
-    int  price	,stock_in_hand	,shipping_days	,likes	,sale_percentage ,added_to_cart	, Sold;
+    std::string seller_name	;
+    double price ;
+    int  stock_in_hand	,shipping_days	,likes	,sale_percentage ,added_to_cart	, Sold;
 
 };
 
@@ -17,7 +19,7 @@ class listing
 private:
 
     const std::string filepath="listings.csv";
-    vector<sellerD> record;
+    std::vector<sellerD> record;
 
 public:
 

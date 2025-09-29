@@ -9,15 +9,15 @@ using namespace std;
 
 int Authentication:: login()
 {
+    cin.clear();
     string password; //clears the temporary storage of password 
     string id ;
     int try_time=0;
     bool success = false;
     
     cout<<"Please enter your id :"<<endl;
-    cin.clear();
     getline(cin,id);
-    if(person1 != nullptr)
+    if(person1 == nullptr)
         return 1;
     if(!person1->checkid(id))
     {
@@ -26,15 +26,16 @@ int Authentication:: login()
 
         while(!success)
         {
-            cin.clear();
+    
             getline(cin, id);
             if(person1->registerID(id))
             {
-                cin.clear();
+                /*cout << "Enter password: ";
                 if(!getline(cin,password))
                 return 1;
-                person1->updatePassword(password);
+                person1->updatePassword(password);*/
                 success=true;
+                cout << "Registration successful!" << endl;
             }
             else
             {
@@ -46,14 +47,14 @@ int Authentication:: login()
     else
     {
         cout<<"User_record found! Please enter your password :"<<endl;
-        cin.clear();
+
          if(!getline(cin,password))
                 return 1;
         while(!person1->checkPassword(password))
         {
             try_time++;
             cout<<"Wrong Password ! Please enter correct password :"<<endl;
-            cin.clear();
+    
             if(!getline(cin,password))
                 return 1;
             if(try_time>2)
